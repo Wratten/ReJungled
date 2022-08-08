@@ -1,1 +1,6 @@
-# ReJungled
+
+## Build
+```bash
+$ androidjs b
+```
+

@@ -1,0 +1,24 @@
+{
+  "name": "rejungled",
+  "version": "1.0.0",
+  "description": "a redo from the ground up of our project 2, now with more features than ever",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wratten/ReJungled.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "node.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wratten/ReJungled/issues"
+  },
+  "homepage": "https://github.com/Wratten/ReJungled#readme"
+}

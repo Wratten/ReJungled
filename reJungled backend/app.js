@@ -1,5 +1,5 @@
 const express = require("express");
-const sequelize = require("./config/connection.js");
+const db = require("./config/connection");
 const PORT = process.env.PORT || 3001;
 
 const router = require("./routes");
@@ -22,6 +22,8 @@ app.use((_, res, next) => {
 
 app.use(router);
 
-sequelize.sync();
-
-app.listen(PORT, () => console.log("Now listening on" + PORT));
+db.once("open", () => {
+  app.listen(PORT, () => {
+    console.log(`API server for ${activity} running on port ${PORT}!`);
+  });
+});

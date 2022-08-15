@@ -67,7 +67,7 @@
 // );
 
 // module.exports = User;
-
+// ___________________________ above is the old code for the sql database _________________________________
 const { Schema, model, default: mongoose } = require("mongoose");
 const bcrypt = require("bcrypt");
 
@@ -89,17 +89,20 @@ const userSchema = new Schema({
     minlength: 5,
   },
   friends: [
+    //friends list array
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
   ],
   profilePicture: {
+    //----------- possibly going to use this as a link to a bunch of profile pics we have saved
     type: String,
   },
 });
 
 userSchema.pre("save", async function (next) {
+  // saving the password as hash so we dont know users stuff
   if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
@@ -113,3 +116,5 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 const User = model("User", userSchema);
+
+module.exports = User;

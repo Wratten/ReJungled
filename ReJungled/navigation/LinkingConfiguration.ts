@@ -30,6 +30,16 @@ const linking: LinkingOptions<RootStackParamList> = {
               Friends: "three",
             },
           },
+          Create: {
+            screens: {
+              Create: "four",
+            },
+          },
+          Inbox: {
+            screens: {
+              Inbox: "five",
+            },
+          },
         },
       },
       Modal: "modal",

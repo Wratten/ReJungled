@@ -21,6 +21,8 @@ import NotFoundScreen from "../screens/NotFoundScreen";
 import Account from "../screens/Account";
 import Home from "../screens/Home";
 import Friends from "../screens/Friends";
+import Create from "../screens/Create";
+import Inbox from "../screens/Inbox";
 
 import {
   RootStackParamList,
@@ -87,6 +89,40 @@ function BottomTabNavigator() {
       }}
     >
       <BottomTab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          title: "Home",
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Friends"
+        component={Friends}
+        options={{
+          title: "Friends",
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Create"
+        component={Create}
+        options={{
+          title: "Create",
+          tabBarIcon: ({ color }) => <TabBarIcon name="plus" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Inbox"
+        component={Inbox}
+        options={{
+          title: "Inbox",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="envelope" color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
         name="Account"
         component={Account}
         options={({ navigation }: RootTabScreenProps<"Account">) => ({
@@ -108,22 +144,6 @@ function BottomTabNavigator() {
             </Pressable>
           ),
         })}
-      />
-      <BottomTab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          title: "Home",
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
-        name="Friends"
-        component={Friends}
-        options={{
-          title: "Friends",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
       />
     </BottomTab.Navigator>
   );
